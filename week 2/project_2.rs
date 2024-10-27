@@ -8,8 +8,8 @@ fn main() {
 	//mac
 	let qty:f64 = 1.00;
 	let amt:f64 = 1_500_000.00;
-	let t = qty * amt;
-	println!("Total amount is {}", t);
+	let m = qty * amt;
+	println!("Total amount is {}", m);
 
 	//hp
 	let qty:f64 = 3.00;
@@ -29,9 +29,9 @@ fn main() {
 	let d = qty * amt;
 	println!("Total amount is {}", d);
 
-	let s = t + b + c + d;
+	let s = t + m + b + c + d;
 	println!("Sum is {}", s);
-	let a = (t + b + c + d)/4.00;
+	let a = (t + m + b + c + d)/4.00;
 	println!("Average is {}", a);
 	
 }
