@@ -1,0 +1,6 @@
+[package]
+name = "parctice_6"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
