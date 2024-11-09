@@ -1,46 +1,33 @@
 use std::io;
-use std::f64;
 
 fn main() {
-    // Input values for a, b, and c
-    println!("Enter the coefficient a:");
-    let a = read_input();
+    let mut input1 = String::new();
+    let mut input2 = String::new();
+    let mut input3 = String::new();
 
-    println!("Enter the coefficient b:");
-    let b = read_input();
+    println!("enter coefficient a");
+    io::stdin().read_line(&mut input1).expect("not a string");
+    let a: f32 = input1.trim().parse().expect("not a number");
 
-    println!("Enter the coefficient c:");
-    let c = read_input();
+    println!("enter coefficient b");
+    io::stdin().read_line(&mut input2).expect("not a string");
+    let b: f32 = input2.trim().parse().expect("not a number");
 
-    // Calculate the discriminant
-    let discriminant = b * b - 4.0 * a * c;
+    println!("enter coefficient c");
+    io::stdin().read_line(&mut input3).expect("not a string");
+    let c: f32 = input3.trim().parse().expect("not a number");
 
-    // Check the nature of the roots based on the discriminant
-    if discriminant > 0.0 {
-        // Two real and distinct roots
-        let root1 = (-b + discriminant.sqrt()) / (2.0 * a);
-        let root2 = (-b - discriminant.sqrt()) / (2.0 * a);
-        println!("The roots are real and distinct:");
+    let d: f32 = b * b - 4.0 * a * c;
+
+    if d >0.0{
+        let root1 = (-b + d.sqrt()) / (2.0 * a);
+        let root2 = (-b - d.sqrt()) / (2.0 * a);
         println!("Root 1 = {}", root1);
         println!("Root 2 = {}", root2);
-    } else if discriminant == 0.0 {
-        // One real and repeated root
+    } else if d ==0.0{
         let root = -b / (2.0 * a);
-        println!("The root is real and repeated:");
         println!("Root = {}", root);
-    } else {
-        // Complex roots
-        let real_part = -b / (2.0 * a);
-        let imaginary_part = (discriminant.abs().sqrt()) / (2.0 * a);
-        println!("The roots are complex and imaginary:");
-        println!("Root 1 = {} + {}i", real_part, imaginary_part);
-        println!("Root 2 = {} - {}i", real_part, imaginary_part);
+    } else if d <0.0 {
+        println!("There are no real roots")
     }
-}
-
-// Helper function to read input and parse it as a f64 number
-fn read_input() -> f64 {
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).expect("Failed to read input");
-    input.trim().parse().expect("Please enter a valid number")
 }
