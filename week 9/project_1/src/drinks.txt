@@ -1,0 +1,15 @@
+Category        Drink                    
+                                         
+Lager           33 Export                
+Lager           Desperados               
+Lager           Goldberg                 
+Lager           Gulder                   
+Lager           Heineken                 
+Lager           Star                     
+Stout           Legend                   
+Stout           Turbo King               
+Stout           Williams                 
+Non-Alcoholic   Maltina                  
+Non-Alcoholic   Amstel Malta             
+Non-Alcoholic   Malta Gold               
+Non-Alcoholic   Fayrouz                  
